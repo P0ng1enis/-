@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Melody Mart - Главная</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Шапка -->
+    <header>
+        <div class="container header-container">
+            <a href="index.html" class="logo">
+                <i class="fas fa-guitar"></i>
+                <span>Melody Mart</span>
+            </a>
+            
+            <nav>
+                <ul>
+                    <li><a href="index.html" class="active">Главная</a></li>
+                    <li><a href="catalog.html">Каталог</a></li>
+                    <li><a href="about.html">О нас</a></li>
+                    <li><a href="cart.html" class="cart-link">
+                        <i class="fas fa-shopping-cart"></i>
+                        <span class="cart-count">0</span>
+                    </a></li>
+                </ul>
+            </nav>
+            
+            <button class="mobile-menu-btn" id="mobileMenuToggle">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+    </header>
+
+    <!-- Мобильное меню -->
+    <div class="mobile-menu" id="mobileMenu"></div>
+
+    <main>
+        <!-- Герой-секция -->
+        <section class="hero">
+            <div class="container">
+                <h1>Мир музыкальных инструментов</h1>
+                <p>Откройте для себя широкий ассортимент качественных инструментов для музыкантов любого уровня. Гитары, клавишные, ударные и многое другое!</p>
+                <a href="catalog.html" class="cta-button">Смотреть каталог</a>
+            </div>
+        </section>
+
+        <!-- Особенности -->
+        <section class="features">
+            <div class="container">
+                <h2 class="section-title">Почему выбирают нас</h2>
+                <div class="features-grid">
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-shipping-fast"></i>
+                        </div>
+                        <h3>Быстрая доставка</h3>
+                        <p>Доставка по всей России за 2-7 дней</p>
+                    </div>
+                    
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-award"></i>
+                        </div>
+                        <h3>Гарантия качества</h3>
+                        <p>Все инструменты проходят проверку</p>
+                    </div>
+                    
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-headphones"></i>
+                        </div>
+                        <h3>Консультации</h3>
+                        <p>Помощь в выборе инструмента</p>
+                    </div>
+                    
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-undo"></i>
+                        </div>
+                        <h3>Возврат 14 дней</h3>
+                        <p>Возврат и обмен в течение 14 дней</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Популярные товары -->
+        <section class="popular-products">
+            <div class="container">
+                <h2 class="section-title">Популярные товары</h2>
+                <div class="products-grid" id="popularProducts">
+                    <!-- Товары будут загружены через JavaScript -->
+                </div>
+                <div class="text-center">
+                    <a href="catalog.html" class="btn-secondary">Весь каталог</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Отзывы -->
+        <section class="testimonials">
+            <div class="container">
+                <h2 class="section-title">Отзывы клиентов</h2>
+                <div class="testimonials-grid">
+                    <div class="testimonial-card">
+                        <div class="testimonial-content">
+                            <p>"Отличный магазин! Купил гитару, качество на высшем уровне. Доставка быстрая, сервис на пять звёзд!"</p>
+                        </div>
+                        <div class="testimonial-author">
+                            <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Алексей">
+                            <div>
+                                <h4>Алексей Иванов</h4>
+                                <span>Москва</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="testimonial-card">
+                        <div class="testimonial-content">
+                            <p>"Первый раз покупал синтезатор онлайн. Очень доволен! Цена ниже, чем в других магазинах, а качество отличное."</p>
+                        </div>
+                        <div class="testimonial-author">
+                            <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Мария">
+                            <div>
+                                <h4>Мария Смирнова</h4>
+                                <span>Санкт-Петербург</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="testimonial-card">
+                        <div class="testimonial-content">
+                            <p>"Заказывал барабанную установку для сына. Привезли вовремя, собрали, показали как настраивать. Очень благодарен!"</p>
+                        </div>
+                        <div class="testimonial-author">
+                            <img src="https://randomuser.me/api/portraits/men/65.jpg" alt="Дмитрий">
+                            <div>
+                                <h4>Дмитрий Петров</h4>
+                                <span>Екатеринбург</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Подвал -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h3>Melody Mart</h3>
+                    <p>Крупнейший магазин музыкальных инструментов в России с более чем 20-летним опытом работы.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-vk"></i></a>
+                        <a href="#"><i class="fab fa-telegram"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>Категории</h3>
+                    <ul>
+                        <li><a href="catalog.html?category=guitars">Гитары</a></li>
+                        <li><a href="catalog.html?category=keyboards">Клавишные</a></li>
+                        <li><a href="catalog.html?category=drums">Ударные</a></li>
+                        <li><a href="catalog.html?category=strings">Струнные</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>Контакты</h3>
+                    <ul>
+                        <li><i class="fas fa-map-marker-alt"></i> Москва, ул. Музыкальная, 15</li>
+                        <li><i class="fas fa-phone"></i> +7 (495) 123-45-67</li>
+                        <li><i class="fas fa-envelope"></i> info@melodymart.ru</li>
+                        <li><i class="fas fa-clock"></i> Пн-Сб: 10:00-20:00</li>
+                    </ul>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>Полезные ссылки</h3>
+                    <ul>
+                        <li><a href="about.html">О компании</a></li>
+                        <li><a href="#">Доставка и оплата</a></li>
+                        <li><a href="#">Гарантия</a></li>
+                        <li><a href="#">Контакты</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="copyright">
+                <p>&copy; 2023 Melody Mart. Все права защищены.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script>
+        // Загрузка популярных товаров для главной страницы
+        document.addEventListener('DOMContentLoaded', function() {
+            const popularProductsContainer = document.getElementById('popularProducts');
+            const popularProducts = products.slice(0, 4); // Первые 4 товара
+            
+            popularProducts.forEach(product => {
+                const productCard = document.createElement('div');
+                productCard.className = 'product-card';
+                productCard.innerHTML = `
+                    <div class="product-img">
+                        <img src="${product.image}" alt="${product.name}">
+                        ${product.badge ? `<span class="product-badge">${product.badge}</span>` : ''}
+                    </div>
+                    <div class="product-info">
+                        <h3>${product.name}</h3>
+                        <div class="product-rating">
+                            ${'★'.repeat(product.rating)}${'☆'.repeat(5 - product.rating)}
+                        </div>
+                        <div class="product-category">${categories.find(c => c.id === product.category)?.name || product.category}</div>
+                        <div class="product-price">${product.price.toLocaleString()} руб.</div>
+                        <button class="add-to-cart" data-id="${product.id}">В корзину</button>
+                    </div>
+                `;
+                
+                popularProductsContainer.appendChild(productCard);
+            });
+            
+            // Обновляем кнопки "В корзине"
+            updateAddToCartButtons();
+        });
+    </script>
+</body>
+</html>

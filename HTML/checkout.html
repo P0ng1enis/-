@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Melody Mart - Оформление заказа</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Шапка -->
+    <header>
+        <div class="container header-container">
+            <a href="index.html" class="logo">
+                <i class="fas fa-guitar"></i>
+                <span>Melody Mart</span>
+            </a>
+            
+            <nav>
+                <ul>
+                    <li><a href="index.html">Главная</a></li>
+                    <li><a href="catalog.html">Каталог</a></li>
+                    <li><a href="about.html">О нас</a></li>
+                    <li><a href="cart.html" class="cart-link">
+                        <i class="fas fa-shopping-cart"></i>
+                        <span class="cart-count">0</span>
+                    </a></li>
+                </ul>
+            </nav>
+            
+            <button class="mobile-menu-btn" id="mobileMenuToggle">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+    </header>
+
+    <!-- Мобильное меню -->
+    <div class="mobile-menu" id="mobileMenu"></div>
+
+    <main>
+        <!-- Хлебные крошки -->
+        <div class="breadcrumbs">
+            <div class="container">
+                <ul>
+                    <li><a href="index.html">Главная</a></li>
+                    <li class="separator">/</li>
+                    <li><a href="cart.html">Корзина</a></li>
+                    <li class="separator">/</li>
+                    <li class="current">Оформление заказа</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="checkout-container">
+            <div class="checkout-header">
+                <h1>Оформление заказа</h1>
+                <p>Заполните данные для доставки и оплаты</p>
+            </div>
+            
+            <!-- Шаги оформления -->
+            <div class="checkout-steps">
+                <div class="checkout-step active">
+                    <div class="step-number">1</div>
+                    <div class="step-label">Данные заказа</div>
+                </div>
+                <div class="checkout-step">
+                    <div class="step-number">2</div>
+                    <div class="step-label">Доставка</div>
+                </div>
+                <div class="checkout-step">
+                    <div class="step-number">3</div>
+                    <div class="step-label">Оплата</div>
+                </div>
+                <div class="checkout-step">
+                    <div class="step-number">4</div>
+                    <div class="step-label">Подтверждение</div>
+                </div>
+            </div>
+            
+            <!-- Форма оформления -->
+            <form id="checkoutForm" class="checkout-form">
+                <!-- Шаг 1: Контактная информация -->
+                <div class="form-section" id="step1">
+                    <h2>Контактная информация</h2>
+                    
+                    <div class="form-group">
+                        <label for="fullName">ФИО *</label>
+                        <input type="text" id="fullName" name="fullName" required>
+                    </div>
+                    
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="email">Email *</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="phone">Телефон *</label>
+                            <input type="tel" id="phone" name="phone" required>
+                        </div>
+                    </div>
+                    
+                    <div class="checkout-actions">
+                        <a href="cart.html" class="btn-outline">Назад в корзину</a>
+                        <button type="button" class="btn-secondary next-step" data-next="step2">Продолжить</button>
+                    </div>
+                </div>
+                
+                <!-- Шаг 2: Доставка -->
+                <div class="form-section" id="step2" style="display: none;">
+                    <h2>Адрес доставки</h2>
+                    
+                    <div class="form-group">
+                        <label for="address">Адрес *</label>
+                        <input type="text" id="address" name="address" required placeholder="Улица, дом, квартира">
+                    </div>
+                    
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="city">Город *</label>
+                            <input type="text" id="city" name="city" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="postalCode">Почтовый индекс *</label>
+                            <input type="text" id="postalCode" name="postalCode" required>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="deliveryMethod">Способ доставки *</label>
+                        <select id="deliveryMethod" name="deliveryMethod" required>
+                            <option value="">Выберите способ доставки</option>
+                            <option value="courier">Курьерская доставка (2-3 дня) - 500 руб.</option>
+                            <option value="pickup">Самовывоз из магазина (бесплатно)</option>
+                            <option value="post">Почта России (5-10 дней) - 300 руб.</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="deliveryNotes">Примечания к доставке</label>
+                        <textarea id="deliveryNotes" name="deliveryNotes" rows="3" placeholder="Дополнительные пожелания по доставке"></textarea>
+                    </div>
+                    
+                    <div class="checkout-actions">
+                        <button type="button" class="btn-outline prev-step" data-prev="step1">Назад</button>
+                        <button type="button" class="btn-secondary next-step" data-next="step3">Продолжить</button>
+                    </div>
+                </div>
+                
+                <!-- Шаг 3: Оплата -->
+                <div class="form-section" id="step3" style="display: none;">
+                    <h2>Способ оплаты</h2>
+                    
+                    <div class="payment-methods">
+                        <div class="payment-method">
+                            <input type="radio" id="payment-card" name="paymentMethod" value="card" checked>
+                            <label for="payment-card">
+                                <i class="fas fa-credit-card"></i>
+                                <span>Банковская карта</span>
+                            </label>
+                        </div>
+                        
+                        <div class="payment-method">
+                            <input type="radio" id="payment-cash" name="paymentMethod" value="cash">
+                            <label for="payment-cash">
+                                <i class="fas fa-money-bill-wave"></i>
+                                <span>Наличные при получении</span>
+                            </label>
+                        </div>
+                        
+                        <div class="payment-method">
+                            <input type="radio" id="payment-online" name="paymentMethod" value="online">
+                            <label for="payment-online">
+                                <i class="fas fa-university"></i>
+                                <span>Онлайн-банкинг</span>
+                            </label>
+                        </div>
+                    </div>
+                    
+                    <!-- Поля для банковской карты -->
+                    <div id="cardDetails" style="margin-top: 20px;">
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="cardNumber">Номер карты *</label>
+                                <input type="text" id="cardNumber" name="cardNumber" placeholder="1234 5678 9012 3456">
+                            </div>
+                            <div class="form-group">
+                                <label for="cardExpiry">Срок действия *</label>
+                                <input type="text" id="cardExpiry" name="cardExpiry" placeholder="MM/YY">
+                            </div>
+                        </div>
+                        
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="cardName">Имя на карте *</label>
+                                <input type="text" id="cardName" name="cardName">
+                            </div>
+                            <div class="form-group">
+                                <label for="cardCVC">CVC/CVV *</label>
+                                <input type="text" id="cardCVC" name="cardCVC" placeholder="123">
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="checkout-actions">
+                        <button type="button" class="btn-outline prev-step" data-prev="step2">Назад</button>
+                        <button type="button" class="btn-secondary next-step" data-next="step4">Продолжить</button>
+                    </div>
+                </div>
+                
+                <!-- Шаг 4: Подтверждение -->
+                <div class="form-section" id="step4" style="display: none;">
+                    <h2>Подтверждение заказа</h2>
+                    
+                    <div class="order-summary">
+                        <h3>Ваш заказ</h3>
+                        <div id="orderItems">
+                            <!-- Товары будут загружены через JavaScript -->
+                        </div>
+                        <div class="order-total">
+                            <span>Итого:</span>
+                            <span id="orderTotal">0 руб.</span>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group" style="margin-top: 30px;">
+                        <label>
+                            <input type="checkbox" id="terms" name="terms" required>
+                            Я соглашаюсь с <a href="#" style="color: var(--primary);">условиями обработки персональных данных</a> и <a href="#" style="color: var(--primary);">правилами возврата</a> *
+                        </label>
+                    </div>
+                    
+                    <div class="checkout-actions">
+                        <button type="button" class="btn-outline prev-step" data-prev="step3">Назад</button>
+                        <button type="submit" class="cta-button">Подтвердить заказ</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </main>
+
+    <!-- Подвал -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h3>Melody Mart</h3>
+                    <p>Крупнейший магазин музыкальных инструментов в России с более чем 20-летним опытом работы.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-vk"></i></a>
+                        <a href="#"><i class="fab fa-telegram"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>Категории</h3>
+                    <ul>
+                        <li><a href="catalog.html?category=guitars">Гитары</a></li>
+                        <li><a href="catalog.html?category=keyboards">Клавишные</a></li>
+                        <li><a href="catalog.html?category=drums">Ударные</a></li>
+                        <li><a href="catalog.html?category=strings">Струнные</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>Контакты</h3>
+                    <ul>
+                        <li><i class="fas fa-map-marker-alt"></i> Москва, ул. Музыкальная, 15</li>
+                        <li><i class="fas fa-phone"></i> +7 (495) 123-45-67</li>
+                        <li><i class="fas fa-envelope"></i> info@melodymart.ru</li>
+                        <li><i class="fas fa-clock"></i> Пн-Сб: 10:00-20:00</li>
+                    </ul>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>Полезные ссылки</h3>
+                    <ul>
+                        <li><a href="about.html">О компании</a></li>
+                        <li><a href="#">Доставка и оплата</a></li>
+                        <li><a href="#">Гарантия</a></li>
+                        <li><a href="#">Контакты</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="copyright">
+                <p>&copy; 2023 Melody Mart. Все права защищены.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script src="checkout.js"></script>
+</body>
+</html>
